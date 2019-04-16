@@ -1,0 +1,40 @@
+<ion-content padding>
+     <button ion-button icon-only clear class="btn-close" round (click)="login()">
+      <ion-icon name="ios-close-circle-outline"></ion-icon>
+   </button>
+<ion-list>
+  <ion-item>
+    <br>
+    <br>
+    <hr>
+<h2 style="text-align:center;"><b>Register</b></h2>
+<hr>
+</ion-item>
+  <ion-item>
+    <!-- <ion-label fixed>Name</ion-label> -->
+    <ion-input placeholder="First Names"  type="text"  [(ngModel)]="userData.first_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <!-- <ion-label fixed>Name</ion-label> -->
+    <ion-input placeholder="Last Names"  type="text"  [(ngModel)]="userData.last_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <!-- <ion-label fixed>Email</ion-label> -->
+    <ion-input placeholder="Email"  type="text"  [(ngModel)]="userData.email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!-- <ion-label fixed>Username</ion-label> -->
+    <ion-input placeholder="Phone Number"  type="tel"  [(ngModel)]="userData.phone"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!-- <ion-label fixed>Password</ion-label> -->
+    <ion-input placeholder="Password"  type="password" [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+
+  <button ion-button block color="primary" (click)="signup()">Signup</button>
+  
+ <!--  <a href="#" (click)="login()">Login</a> -->
+</ion-list>
+</ion-content>

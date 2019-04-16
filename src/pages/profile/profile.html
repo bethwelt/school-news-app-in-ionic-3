@@ -1,0 +1,94 @@
+<ion-header >
+  <ion-navbar>
+    <div  class="brand">
+      <ion-title>Account</ion-title> 
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content  *ngIf="userPostData != null && userPostData != 0">
+  <div padding class="main-info">
+    <div class="wrapper-info">
+      <h3>{{userPostData.first_name}} {{userPostData.last_name}}</h3>
+
+      <button ion-button color="light" clear *ngIf="user_view == null"  (click)="edit_prf()">
+        <ion-icon name="md-create"></ion-icon>
+      </button>
+      <p class="email">{{userPostData.first_name}} {{userPostData.last_name}}</p>
+      <p class="phone">
+        <ion-icon name="ios-call"></ion-icon>{{userPostData.phone}}</p>
+ 
+   <ion-row *ngIf="lists.empty != 1">
+    <h4>My Students </h4>
+    <ion-col col-6 *ngFor="let item of lists ; let i = index">
+      <ion-card >
+        <img src="{{student_img_url + item.image}}" />
+        <ion-card-content>
+          <ion-card-title>{{item.first_name}} {{item.last_name}}</ion-card-title>
+          <p class="price">Regno: {{item.student_id}}</p>
+        </ion-card-content>
+        
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</div>
+  </div>
+  <div class="more-info" padding *ngIf="userPostData != null">
+    <p> First Name:</p>
+    <h5>{{userPostData.first_name}}</h5>
+    <p> Last Name:</p>
+    <h6>{{userPostData.last_name}}</h6>
+  </div>
+  <div  class="wrapper-edit" padding *ngIf="user_view == null && check_edit == true">
+    <h4>Edit Profile</h4>
+    <ion-item>
+      <ion-label stacked> Full Name</ion-label>
+      <ion-input [(ngModel)]="first_name" type="text"></ion-input>
+    </ion-item>
+     <ion-item>
+      <ion-label stacked> Last Name</ion-label>
+      <ion-input [(ngModel)]="last_name" type="text"></ion-input>
+    </ion-item>
+    <i class="text-left">* 5 < length < 50 characters</i>
+    <ion-item>
+      <ion-label stacked>Phone</ion-label>
+      <ion-input [(ngModel)]="phone" type="number"></ion-input>
+    </ion-item>
+    <i class="text-left">* 6 < length < 20 number</i>
+    <ion-item>
+      <ion-label stacked>Email</ion-label>
+      <ion-input [(ngModel)]="email" type="text"></ion-input>
+    </ion-item>
+    <i class="text-left">* 5 < length < 250 characters</i>
+    <b *ngIf="msg_err_edit != null" class="msg_err">{{msg_err_edit}}</b>
+    <button ion-button small clear (click)="upload_edit()">
+      Save
+    </button>
+    <h4>Change Password </h4>
+    <i>5 < pwd < 60 characters && do not contain special characters</i>
+    <ion-item>
+      <ion-label stacked> Old Password </ion-label>
+      <ion-input [(ngModel)]="old_pwd" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> New Password</ion-label>
+      <ion-input [(ngModel)]="new_pwd" type="password"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked> Confirm Password</ion-label>
+      <ion-input [(ngModel)]="confirm_pwd" type="password"></ion-input>
+    </ion-item>
+    <b *ngIf="msg_err_pwd != null" class="msg_err">{{msg_err_pwd}}</b>
+    <button io n-button small clear (click)="change_password()">
+      change Password
+    </button>
+    <div>
+      <button ion-button clear class="btn-close-edit" (click)="un_edit_prf()">
+        <ion-icon name="ios-arrow-dropup-outline"></ion-icon>
+      </button>
+    </div>
+  </div>
+ 
+ <!--  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>

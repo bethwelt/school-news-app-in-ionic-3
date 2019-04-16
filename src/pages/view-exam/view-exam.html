@@ -1,0 +1,101 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{obj.year}} Term {{obj.term}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list class="card list">
+      <ion-card>
+         <ion-item>
+    <div>
+     <H1>Exam Report </H1>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div>
+      Year : <b>{{obj.year}}</b>  Session/Term: <b>{{obj.term}}
+      </b>
+    </div>
+  </ion-item>
+  <div padding >
+    <div>
+
+
+    	<ion-card-content>
+        <hr>
+
+        Student Names:{{obj.first_name}} {{obj.last_name}} Regno: {{obj.student_id}} 
+      	<hr>
+        <div class = "row">
+   <div class = "col col-100">Position</div>
+   <div class = "col"><b>{{obj.Position}}</b></div>
+   
+</div>
+      <div class = "row">
+   <div class = "col col-50"><b>Subject</b></div>
+   <div class = "col"><b>Marks</b></div>
+</div>
+
+<div class = "row">
+   <div class = "col col-50">English </div>
+   <div class = "col">{{obj.english}}</div>
+   
+</div>
+
+  <div class = "row">
+   <div class = "col">Kiswahili</div>
+   <div class = "col">{{obj.kisw}}</div>
+   
+</div>
+
+
+  <div class = "row">
+ 
+   <div class = "col">Mathematics</div>
+   <div class = "col">{{obj.maths}}</div>
+   
+</div>
+
+  <div class = "row">
+
+   <div class = "col">Science</div>
+   <div class = "col">{{obj.scie}}</div>
+</div>
+  <div class = "row">
+   <div class = "col">SS/IRE</div>
+   <div class = "col">{{obj.ss}}</div>
+</div>
+<hr>
+<div class = "row">
+   <div class = "col col-50">Total</div>
+   <div class = "col"><b>{{obj.total}}</b></div>
+
+</div>
+  <div class = "row">
+   <div class = "col col-50">Average</div>
+   
+   <div class = "col"><b>{{obj.average}}</b></div>
+</div>
+
+<div class = "row">
+   <div class = "col col-50">Grade</div>
+   <div class = "col"><b>{{obj.grade}}</b></div>
+   
+</div>
+    
+</ion-card-content>
+
+  </div>
+  </div>
+  </ion-card>
+</ion-list>
+
+  <!--<div class="comment" padding>
+    <h4>Comments</h4>
+    <div class="wrapper-cmt"></div>
+  </div>-->
+</ion-content>
+

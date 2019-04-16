@@ -1,0 +1,111 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+ <ion-title>My Gallery</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="profile()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <!-- <ion-toolbar no-border-top>
+    <ion-searchbar color="primary" [(ngModel)]="terms" placeholder="Search"></ion-searchbar>
+    <button ion-button type="button" (click)="sort()">Sort</button>
+  </ion-toolbar> -->
+</ion-header>
+
+
+<ion-content>
+<!--   <div *ngIf="slider_lists.length > 1">
+    <ion-slides pager="true" effect="coverflow" initialSlide="0" (ionSlideAutoplayStart)='setting_slides()' autoplay="500" loop="true" speed="2000">
+      <ion-slide *ngFor="let item of slider_lists ; let i = index">
+        <img src="{{base_url + item.image_path}}" alt="">
+        <div class="slogan">
+          <div class="wrapper-slogan" padding>
+            <h2>{{item.title.slice(0,25) + '...'}}</h2>
+            <p>{{item.content.slice(0,65) + '...'}}</p>
+            <button ion-button round icon-left small color="light" (click)="view(item)">
+              <ion-icon name="md-search"></ion-icon>{{'detail' | translate }}
+            </button>
+            <button ion-button round icon-left small color="light" (click)="call(item.phone)">
+              <ion-icon name="ios-call"></ion-icon>{{'now' | translate }}
+            </button>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </div> -->
+ <!--  <div *ngIf="lists.empty == 1" class="empty_data">
+    <div>
+      
+      <ion-card-content>
+      <h4>Gallery Empty.</h4>
+      <p>No Photos on this Gallery..</p>
+
+      </ion-card-content>
+    </div>
+  </div> -->
+  <ion-list class="card list" *ngIf="lists.empty !== 1">
+    <ion-card  *ngFor="let item of lists | search : terms | sort: {property: column, order: order} let i = index" >
+      <ion-item>
+        <ion-avatar item-start>
+      <img class="img-circular" src="{{b_url + item.image}}"  />
+       {{item.name}}
+        </ion-avatar>
+      </ion-item>
+      <img class="img-circular" src="{{b_url + item.image}}" />
+      <ion-card-content>
+       <!-- <ion-card-title>
+          {{b_url}}
+        </ion-card-title>  -->
+
+        <div class="local">
+        <ion-icon name="md-locate"></ion-icon>
+        {{item.category + ' - ' + item.date}}
+        </div>
+        <!-- <p class="price">Time: {{item.time}}</p>  -->
+        <p>{{item.descr}}</p>
+      </ion-card-content>
+      <!-- <ion-row>
+        <ion-col col-3>
+          <button ion-button icon-left clear (click)="mail(item)">
+            <ion-icon name="ios-mail"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button icon-left clear (click)="call(item.phone)">
+            <ion-icon name="ios-call"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button [ngClass]="{'active' : (item.favorites == true)}" ion-button icon-left clear (click)="favorites(item.id, i)">
+            <ion-icon name="ios-heart"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button icon-left clear (click)="share(item)">
+            <ion-icon name="md-share"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row> -->
+    </ion-card>
+  </ion-list>
+  <ion-list class="card list" *ngIf="lists.empty == 1">
+    <ion-card>
+    
+      <ion-card-content>
+         <p class="price">No records..</p> 
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>
+
+
+

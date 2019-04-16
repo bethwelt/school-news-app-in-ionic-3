@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+ <ion-title>Homeworks</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="profile()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <!-- <ion-toolbar no-border-top>
+    <ion-searchbar color="primary" [(ngModel)]="terms" placeholder="Search"></ion-searchbar>
+    <button ion-button type="button" (click)="sort()">Sort</button>
+  </ion-toolbar> -->
+</ion-header>
+<ion-content>
+
+<!--   <div *ngIf="lists.empty == 1" class="empty_data">
+    <div>
+      <h4>No data</h4>
+      <p>No data found</p>
+    </div>
+  </div> -->
+  <ion-list class="card list" *ngIf="lists.empty !==1">
+    <ion-card *ngFor="let item of lists ; let i = index">
+      <ion-item>
+        <ion-avatar item-start (click)="view_prf(item.user_id)">
+        <ion-icon name="ios-calendar-outline"></ion-icon> <b>{{item.name}}</b>
+        </ion-avatar>
+
+        <!-- <h3>Event posted {{item.date_c}}</h3> -->
+      </ion-item>
+      <ion-card-content>
+         <p class="price"><b>Subject: {{item.name}}</b></p> 
+         <p class="price">Date: <b> {{item.date}}</b></p> 
+         <p>{{item.descr}}</p>
+      </ion-card-content>
+     <!--  <ion-row>
+        <ion-col col-3>
+          <button ion-button icon-left clear (click)="mail(item)">
+            <ion-icon name="ios-mail"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button icon-left clear (click)="call(item.phone)">
+            <ion-icon name="ios-call"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button [ngClass]="{'active' : (item.favorites == true)}" ion-button icon-left clear (click)="favorites(item.id, i)">
+            <ion-icon name="ios-heart"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+          <button ion-button icon-left clear (click)="share(item)">
+            <ion-icon name="md-share"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row> -->
+    </ion-card>
+  </ion-list>
+  <ion-list class="card list" *ngIf="lists.empty == 1">
+    <ion-card>
+    
+      <ion-card-content>
+         <p class="price">No records..</p> 
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <!-- <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>
+

@@ -1,0 +1,59 @@
+
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+
+ <ion-title>Exam Reports</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="profile()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary" [(ngModel)]="terms" placeholder="Search"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="card list" *ngIf="lists.empty !== 1">
+    <ion-card *ngFor="let item of lists | search : terms | sort: {property: column, order: order} let i = index">
+      <ion-item>
+        <ion-avatar item-start>
+        <b><ion-icon name="ios-calendar-outline"></ion-icon> Year {{item.year}}</b>
+        </ion-avatar>
+      </ion-item>
+      <ion-card-content>
+      	<hr>
+
+
+          <p class="price"><b>Exam Title : {{item.type}} </b></p> 
+         <p class="price"> <b>Term/Session:  {{item.term}}</b></p> 
+      
+         <hr>
+        Average :<b>{{item.average}} </b>  Grade: <b>{{item.grade}}</b>
+          <hr>
+       <ion-item>Total Marks :<b>{{item.total}} </b> 
+       	<button
+         ion-button
+         color="primary"
+         item-right
+         (click)="view(item)">View Details</button></ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+   <ion-list class="card list" *ngIf="lists.empty == 1">
+    <ion-card>
+    
+      <ion-card-content>
+         <p class="price">No records..</p> 
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
+

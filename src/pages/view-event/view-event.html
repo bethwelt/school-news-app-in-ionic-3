@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{obj.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list class="card list">
+      <ion-card>
+  <ion-item>
+    <div>
+      <p>Posted On <b>{{obj.date_c}}
+         <!-- {{this.converTime(obj.date_c) | amTimeAgo}} -->
+      </b></p>
+    </div>
+  </ion-item>
+  <div padding >
+    <div>
+    <h2 class="title"><b>{{obj.title}}</b></h2>
+    <hr>
+    <p class="price">Date: <b>{{obj.date}}</b></p>
+    <p class="local">Venue: <b>{{obj.venue}}</b></p>
+    <p class="purpose">Time: <b>{{obj.time}}</b>
+    </p>
+
+  </div>
+  <div>
+  <hr>
+    <p class="txt-content">{{obj.description}}</p>
+  </div>
+  </div>
+  </ion-card>
+</ion-list>
+
+  <!--<div class="comment" padding>
+    <h4>Comments</h4>
+    <div class="wrapper-cmt"></div>
+  </div>-->
+</ion-content>
+

@@ -1,0 +1,72 @@
+page-setting {
+	ion-content{
+		background: transparent !important;
+		.scroll-content{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+	.wrapper{
+		padding: 40px 20px 25px 20px;
+		h6{
+			font-size: 1.4rem;
+			text-transform: uppercase;
+		}
+		p{
+			color: #757575;
+			font-size: 1.3rem;
+			margin-bottom: 20px;
+		}
+		ion-item{
+			padding-left: 0 !important;
+			background: none;
+			color: #212121;
+			ion-label{
+				width: 100%;
+			}
+			.item-inner{
+				border: none !important;
+				padding: 0 !important;
+				ion-toggle{
+					padding-right: 0 !important;
+				}
+				ion-select{
+					padding-right: 3px !important;
+					&.select-wp{
+						margin-right: 0 !important;
+					}
+				}
+			}
+		}
+	}
+	.close-modal{
+		z-index: 2;
+        position: absolute;
+        background: rgba(0,0,0,0.5);
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .main-modal{
+        opacity: 1;
+        z-index: 1000;
+        background: #fff !important;
+        width: 70%;
+        min-width: 250px;
+        max-width: 280px;
+        max-height: 90%;
+        height: auto;
+        display: block;
+        overflow: auto;
+        border-radius: 15px;
+    }
+	
+}

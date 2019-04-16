@@ -1,0 +1,155 @@
+page-post-detail {
+	ion-content{
+		margin-bottom: 50px !important;
+		ion-slides{
+			height: initial !important;
+			margin-bottom: 10px;
+		}
+		ion-item{
+			margin-bottom: 15px;
+			.item-inner{
+				border: none !important;
+			}
+		}
+		ion-label{
+			display: flex;
+			margin-right: 0 !important;
+			div{
+				display: inline !important;
+				flex: 1;
+				p{
+					font-size: 1.1rem !important;
+				}
+				&.more{
+					float: right;
+					flex: none;
+					ion-icon{
+						font-size: 2rem;
+						color: #757575;
+					}
+					button.active ion-icon{
+						color: #f5265a;
+					}
+				}
+			}
+		}
+		.title{
+			margin-bottom: 20px !important;
+		}
+		.price{
+			font-weight: 500;
+			color: #333;
+			letter-spacing: 0.05rem;
+			margin: 10px 0px !important;
+		}
+		.local{
+			font-weight: 500;
+			color: #333;
+			letter-spacing: 0.05rem;
+			margin: 10px 0px !important;
+		}
+		.purpose{
+			font-weight: 500;
+			color: #333;
+			letter-spacing: 0.05rem;
+			margin: 10px 0px !important;
+		}
+		.condition{
+			font-weight: 500;
+			color: #333;
+			letter-spacing: 0.05rem;
+			margin: 10px 0px !important;
+		}
+		.txt-content{
+			line-height: 2.1rem;
+			color: #757575;
+			margin-top: 30px;
+		}
+		.action{
+			margin: 40px 0px;
+			button{
+				height: 36px !important;
+				background: none;
+				margin: 8px 0px;
+				border: 2px solid #212121;
+				color: #212121;
+				ion-icon{
+					margin-right: 5px;
+				}
+				&.active{
+					background: #f5265a;
+					color: #fff;
+					border: none;
+				}
+			}
+		}
+		.attachment{
+			margin-top: 50px;
+			margin-bottom: 10px;
+			ion-icon{
+				margin-right: 5px;
+				color: #757575;
+			}
+			ion-col{
+				height: 65px;
+				overflow: hidden;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			img{
+				min-width: 100%;
+				max-width: initial !important;
+				height: 65px;
+			}
+			span{
+				color: #757575;
+				font-size: 1.2rem;
+				padding-bottom: 7px;
+				display: inline-block;
+			}
+			button{
+				margin-top: 15px;
+				float: right;
+				padding-right: 0;
+			}
+		}
+		ion-row{
+			margin-top: 5px;
+			margin-left: -3px;
+			margin-right: -3px;
+			ion-col{
+				padding: 3px !important;
+			}
+		}
+		.comment{
+			margin: 20px 0px 40px 0px;
+			h4{
+				font-size: 1.4rem;
+				text-transform: uppercase;
+				position: relative;
+				display: inline-block;
+				padding-left: 15px;
+				&:after{
+					content: "";
+					display: block;
+					background: #212121;
+					height: 3px;
+					width: 10px;
+					position: absolute;
+					left: 0;
+					top: 5px;
+				}
+			}
+			.wrapper-cmt{
+				background: #ebebeb;
+				height: 300px;
+			}
+		}
+	}
+
+	rating ul{
+	    padding: 0px;
+	    margin-left: -10px;
+    }
+}

@@ -1,0 +1,42 @@
+page-signup {
+
+  	ion-input{
+		border: 1.5px solid #ebebeb;
+		background: none;
+		border-radius: 5px;
+		color: #212121;
+		margin-bottom: 15px;
+		input{
+			margin: 15px 3px !important;
+			font-size: 1.3rem;
+			width: 100%;
+			letter-spacing: 0.5px;
+			padding: 0px 15px !important;
+			border: none !important;
+			line-height: initial !important;
+		}
+	}
+	ion-list{
+		margin-bottom: 0px !important;
+	}
+	ion-item{
+		padding: 0 !important;
+		border: none !important;
+		background: none !important;
+		ion-label{
+			margin: 0px 0px !important;
+		}
+		.item-inner{
+			border: none !important;
+			box-shadow: none !important;
+		}
+		&:last-child{
+			border: none !important;
+		}
+		button{
+			color: #fff !important;
+			font-weight: 300 !important;
+			height: 36px !important;
+		}
+	}
+}

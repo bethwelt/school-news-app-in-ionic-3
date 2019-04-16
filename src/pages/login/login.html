@@ -1,0 +1,30 @@
+
+
+
+<ion-content padding>
+	  <div class="main-login">
+    <button ion-button icon-only clear class="btn-close" round (click)="welcome()">
+      <ion-icon name="ios-close-circle-outline"></ion-icon>
+    </button>
+
+    <div class="wrapper">
+      <div class="main-form">
+<ion-list>
+
+  <ion-item>
+    <!-- <ion-label fixed>Username</ion-label> -->
+    <ion-input placeholder="Phone Number"  type="text" value="" [(ngModel)]="userData.username"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <!-- <ion-label fixed>Password</ion-label> -->
+    <ion-input placeholder="Password" type="password" [(ngModel)]="userData.password"></ion-input>
+  </ion-item>
+
+  <button ion-button block color="primary" (click)="login()">Login</button>
+
+</ion-list>
+</div>
+</div>
+</div>
+</ion-content>

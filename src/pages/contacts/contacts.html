@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+ <ion-title>Contacts</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="profile()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-searchbar color="primary" [(ngModel)]="terms" placeholder="Search"></ion-searchbar>
+   <!--  <button ion-button type="button" (click)="sort()">Sort</button> -->
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <!-- <div *ngIf="lists.empty == 0" class="empty_data">
+    <div>
+      <h4>Contacts</h4>
+      <p>No Contacts Found</p>
+    </div>
+  </div> -->
+  <ion-list class="card list" *ngIf="lists.empty !==1">
+    <ion-card *ngFor="let item of lists | search : terms | sort: {property: column, order: order} let i = index">
+      <ion-item>
+        <ion-avatar item-start >
+        <ion-icon name="md-person"></ion-icon>
+        <b>{{item.first_name}}</b>
+        </ion-avatar>
+      </ion-item>
+
+      
+      <!-- <img src="{{base_url + item.photo}}" (click)="view(item)" />  -->
+      <ion-card-content>
+        <p class="price"><b>Role Assign:</b> {{item.role}}</p> 
+        <p class="price"><b>Phone:</b> {{item.phone}}</p> 
+        <p><b>Email:</b>{{item.email}}</p>
+      </ion-card-content>
+
+      <ion-row>
+        <ion-col col-6>
+          <button ion-button icon-left clear (click)="mail(item)">
+            <ion-icon name="ios-mail"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-6>
+          <button ion-button icon-left clear (click)="call(item.phone)">
+            <ion-icon name="ios-call"></ion-icon>
+          </button>
+        </ion-col>
+       <!--  <ion-col col-3>
+          <button [ngClass]="{'active' : (item.favorites == true)}" ion-button icon-left clear (click)="favorites(item.id, i)">
+            <ion-icon name="ios-heart"></ion-icon>
+          </button>
+        </ion-col> -->
+        <!-- <ion-col col-3>
+          <button ion-button icon-left clear (click)="share(item)">
+            <ion-icon name="md-share"></ion-icon>
+          </button>
+        </ion-col> -->
+      </ion-row>
+
+    </ion-card>
+  </ion-list>
+  <ion-list class="card list" *ngIf="lists.empty == 1">
+    <ion-card>
+    
+      <ion-card-content>
+         <p class="price">No records..</p> 
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+ <!--  <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+</ion-content>
+

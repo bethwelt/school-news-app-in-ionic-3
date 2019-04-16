@@ -1,0 +1,74 @@
+
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+     <ion-icon name="menu"></ion-icon>
+    </button>
+ <ion-title>Reports</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="profile()">
+        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <!-- <ion-toolbar no-border-top>
+    <ion-searchbar color="primary" [(ngModel)]="terms" placeholder="Search"></ion-searchbar>
+    <button ion-button type="button" (click)="sort()">Sort</button>
+  </ion-toolbar> -->
+</ion-header>
+<ion-content>
+
+<!--   <div *ngIf="lists.empty ==1" class="empty_data">
+    <div>
+      <h4>No Students Assigned</h4>
+      <p>No Students Yet </p>
+    </div>
+  </div> -->
+  <ion-list class="card list" *ngIf="lists.empty !== 1">
+    <ion-card *ngFor="let item of lists ; let i = index">
+      <ion-item>
+        <ion-avatar item-start>
+       <img class="img-circular" src="{{student_img_url + item.image}}" /> <b>{{item.first_name}} {{item.last_name}} Regno: {{item.student_id}} </b>
+        </ion-avatar>
+      </ion-item>
+      <ion-row>
+        <ion-col col-4>
+          <button ion-button icon-left clear (click)="exams(item)">
+            <!-- <ion-icon name="ios-list-box-outline"></ion-icon> -->
+            <small>View Exams</small>
+          </button>
+        </ion-col>
+        <ion-col col-3>
+        </ion-col>
+        <ion-col col-4>
+          <button ion-button icon-left clear (click)="fees(item)">
+            <!-- <ion-icon name="ios-clock-outline"></ion-icon> -->
+            <small>View Fees</small>
+          </button>
+        </ion-col>
+        
+        
+      </ion-row>
+
+     <!--  <!-- <img class="cards" src="{{student_img_url + item.image}}" /> -->
+      <!-- <ion-card-content>
+         <p class="price"><b>Class: {{item.name}}</b></p> 
+         <p class="price">Regno: {{item.student_id}}</p>   
+     
+      </ion-card-content> --> 
+      
+    </ion-card>
+  </ion-list>
+  <ion-list class="card list" *ngIf="lists.empty == 1">
+    <ion-card>
+    
+      <ion-card-content>
+         <p class="price">No students..</p> 
+        
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+</ion-content>
+
